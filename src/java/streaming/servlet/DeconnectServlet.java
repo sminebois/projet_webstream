@@ -24,16 +24,7 @@ public class DeconnectServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         
-        Cookie c;
-        c = new Cookie("login", null);
-        c.setMaxAge(0);
-        resp.addCookie(c);
-        c = new Cookie("mdp", null);
-        c.setMaxAge(0);
-        resp.addCookie(c);
-        c = new Cookie("utype", null);
-        c.setMaxAge(0);
-        resp.addCookie(c);
+        req.getSession().removeAttribute("utilconnecte");
         
         resp.sendRedirect("home");
     }

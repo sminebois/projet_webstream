@@ -11,7 +11,7 @@
 <a class="liensmenu" href="serie_liste">Séries</a>
 <c:choose>   
 
-    <c:when test="${cookie.utype.getValue()=='ADMIN'}">
+    <c:when test="${utilconnecte.type=='ADMIN'}">
 
         <a class="liensmenu" href="form">Ajouter film</a>
         <a class="liensmenu" href="form_serie">Ajouter série</a>
@@ -19,7 +19,7 @@
 
 </c:choose>
 <c:choose>
-    <c:when test="${cookie.login==null}">
+    <c:when test="${utilconnecte.nom==null}">
 
         <a class="liensmenu" href="connect">Connexion</a>
     </c:when>

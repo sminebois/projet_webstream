@@ -38,9 +38,8 @@ public class ConnectServlet extends HttpServlet {
         
         if(new UtilisateurService().connexion(u))
         {
-            resp.addCookie(new Cookie("mdp", req.getParameter("mdp")));
-            resp.addCookie(new Cookie("login", req.getParameter("id")));
-            resp.addCookie(new Cookie("utype", u.getType().toString()));
+            
+            req.getSession().setAttribute("utilconnecte", u);
             
             resp.sendRedirect("film_liste");
         }else{
